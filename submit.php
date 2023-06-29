@@ -2,9 +2,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'phpmailer/src/PHPMailer.php';
-require 'phpmailer/src/Exception.php';
-require 'phpmailer/src/SMTP.php';
+require 'C:\Users\Maverick\Desktop\ChatGPTWebsite\Rebellious-Analytics-Website\phpmailer/src/PHPMailer.php';
+require 'C:\Users\Maverick\Desktop\ChatGPTWebsite\Rebellious-Analytics-Website\phpmailer/src/Exception.php';
+require 'C:\Users\Maverick\Desktop\ChatGPTWebsite\Rebellious-Analytics-Website\phpmailer/src/SMTP.php';
 
 
 
@@ -27,16 +27,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
     $mail->Username = 'rebelliousanalytics@gmail.com'; // Replace with your Gmail email address
-    $mail->Password = 'wmvlnygwoizcxcpz'; // Replace with your Gmail app password
+    $mail->Password = 'wwmfvtkxpakntcwt'; // Replace with your Gmail app password
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
 
     // Set the sender and recipient
     $mail->setFrom('rebelliousanalytics@gmail.com'); // Replace with your Gmail email address and your name
-
-    $mail->addAddress($_POST["email"]);
-    
-    $mail->isHTML(true);
+    $mail->addAddress('rebelliousanalytics@gmail.com'); // Replace with the recipient email address
 
     // Set the subject and body of the email
     $mail->Subject = 'New Comment';
