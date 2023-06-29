@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Set the sender and recipient
     $mail->setFrom('rebelliousanalytics@gmail.com'); // Replace with your Gmail email address and your name
-    $mail->addAddress('rebelliousanalytics@gmail.com'); // Replace with the recipient email address
+    $mail->addAddress($_POST["email"]); // Replace with the recipient email address
 
     // Set the subject and body of the email
     $mail->Subject = 'New Comment';
