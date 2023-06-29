@@ -2,9 +2,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'C:\Users\Maverick\Desktop\ChatGPTWebsite\Rebellious-Analytics-Website\phpmailer/src/PHPMailer.php';
-require 'C:\Users\Maverick\Desktop\ChatGPTWebsite\Rebellious-Analytics-Website\phpmailer/src/Exception.php';
-require 'C:\Users\Maverick\Desktop\ChatGPTWebsite\Rebellious-Analytics-Website\phpmailer/src/SMTP.php';
+require 'phpmailer/src/PHPMailer.php';
+require 'phpmailer/src/Exception.php';
+require 'phpmailer/src/SMTP.php';
 
 
 
