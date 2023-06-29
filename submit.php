@@ -1,10 +1,12 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 require 'phpmailer/src/PHPMailer.php';
 require 'phpmailer/src/Exception.php';
 require 'phpmailer/src/SMTP.php';
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $comment = $_POST["comment"];
@@ -18,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   try {
     // Create a new PHPMailer instance
-    $mail = new PHPMailer();
+    $mail = new PHPMailer(true);
 
     // Configure PHPMailer
     $mail->isSMTP();
@@ -30,8 +32,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail->Port = 587;
 
     // Set the sender and recipient
-    $mail->setFrom('your-email@gmail.com', 'Your Name'); // Replace with your Gmail email address and your name
-    $mail->addAddress('rebelliousanalytics@gmail.com'); // Replace with the recipient email address
+    $mail->setFrom('rebelliousanalytics@gmail.com'); // Replace with your Gmail email address and your name
+
+    $mail->addAddress($_POST["email"]);
+    
+    $mail->isHTML(true);
 
     // Set the subject and body of the email
     $mail->Subject = 'New Comment';
