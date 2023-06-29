@@ -58,8 +58,14 @@ function sendFormData() {
   xhr.open("POST", "send_email.php", true);
   xhr.setRequestHeader("Content-type", "application/json");
   xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      console.log(xhr.responseText); // Log the response from the PHP script
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        console.log(xhr.responseText); // Log the response from the PHP script
+        // Display success message or perform any additional actions
+      } else {
+        console.error("Error sending form data.");
+        // Display error message or perform any error handling
+      }
     }
   };
   xhr.send(JSON.stringify(formData));
