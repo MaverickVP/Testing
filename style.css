@@ -1,0 +1,410 @@
+/* Reset default styles */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #6f48c9, #000000);
+  color: #333333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Layout */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.container.center-text {
+  text-align: center;
+}
+
+.container.center-text h2,
+.container.center-text p {
+  text-align: center;
+}
+
+
+/* Header */
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #cccccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transition: top 0.3s ease-in-out;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+}
+
+header .title-container {
+  flex: 1;
+  margin-left: auto;
+}
+
+header h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+}
+
+nav ul {
+  list-style-type: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin: 0 auto; /* Center the navigation menu */
+}
+
+nav li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav a {
+  color: #333333;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.line {
+  width: 25px;
+  height: 3px;
+  background-color: #333333;
+  margin: 5px 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  header {
+    padding-right: 20px;
+  }
+
+  nav ul {
+    list-style-type: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+    margin-right: 120px;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    margin-left: 10px;
+  }
+
+  .line {
+    width: 25px;
+    height: 3px;
+    background-color: #333333;
+    margin: 5px 0;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .hamburger-menu.active .line:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .hamburger-menu.active .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.active .line:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
+/* Title */
+.title-container {
+  display: flex;
+  align-items: center;
+  margin-right: auto; /* Move the title container to the left edge of the screen */
+}
+
+.title-container h1 {
+  font-size: 24px;
+  margin: 0;
+  padding: 0 20px; /* Add some padding for spacing */
+  margin-left: 60px; /* Set left margin to 60px to move the title close to the left edge */
+}
+
+/* Main Content */
+main {
+  flex: 1;
+  padding: 100px 0 40px;
+}
+
+/* Sections */
+section {
+  margin-bottom: 20px;
+}
+
+/* Sections Styling */
+#home {
+  text-align: center;
+  color: #ffffff;
+  background-image: url(images/pexels-neo-2653362.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: calc(100vh - 60px); /* Adjust the height calculation based on the header height */
+  filter: blur(30%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -60px; /* Add negative margin-top to extend the background photo to the top of the page */
+  padding-top: 60px; /* Add padding-top to offset the negative margin-top */
+}
+
+#home h2 {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#services {
+  text-align: center;
+  color: #ffffff;
+}
+
+#services h2 {
+  color: #ff0000;
+}
+
+#services p {
+  color: #ffffff;
+  margin-top: 30px;
+}
+
+/* Services */
+#services {
+  text-align: center;
+  color: #ffffff;
+}
+
+#services h2 {
+  color: #ff0000;
+  border: 2px solid #ffffff; /* Add red border */
+  padding: 10px; /* Add padding to create space between the text and the border */
+}
+
+#services p {
+  color: #ffffff;
+  margin-top: 30px;
+  border: 2px solid #ff0000; /* Add white border */
+  padding: 10px; /* Add padding to create space between the paragraph and the border */
+}
+
+/* Button styles */
+.contact-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #6f48c9;
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.3s ease-in-out;
+  margin-top: 60px; /* Add margin-top to move the button down */
+}
+
+.contact-button:hover {
+  opacity: 0.7; /* Apply fade effect when hovered over */
+}
+
+/* Center align the form */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Add spacing between form elements */
+form label,
+form input,
+form textarea,
+form select {
+  margin-bottom: 10px;
+}
+
+/* Adjust form width if desired */
+form {
+  max-width: 400px; /* Adjust the value to your preference */
+  width: 100%;
+}
+
+.contact-form {
+  border: 2px solid #000000;
+  padding: 20px;
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+/* Change the text color to black */
+.contact-form label,
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  color: #000000;
+}
+
+textarea {
+  height: 150px; /* Adjust the height of the comment box as desired */
+  width: 260px;
+}
+
+/* Center align the text */
+.container h3 {
+  text-align: center;
+  margin-top: 80px;
+  color: #ff0000;
+}
+
+.container h2 {
+  color: #ff0000;
+}
+
+/* Change the color of email and phone number text to white */
+.container p {
+  color: #ffffff;
+}
+
+/* Footer */
+footer {
+  background-color: #000000;
+  padding: 10px;
+  color: #ffffff;
+  text-align: center; /* Center align the text */
+}
+
+/* About Page Content */
+#about {
+  margin-top: 100px; /* Adjust the margin-top value to create space below the black line */
+  text-align: center;
+  color: #ffffff;
+}
+
+#about h2 {
+  text-decoration: underline;
+  font-size: 24px;
+}
+
+#about p {
+  margin: 20px auto;
+}
+
+.box-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap; /* Allow boxes to wrap to the next line */
+}
+
+.box {
+  flex: 0 0 calc(33.33% - 20px); /* Adjust the width of each box */
+  margin: 10px;
+  padding: 20px;
+  background-color: #ffffff;
+  text-align: center;
+  border-radius: 10px; /* Add border-radius for beveled edges */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add box shadow for a subtle pop-up effect */
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.box:hover {
+  transform: translateY(-5px); /* Move the box up slightly on hover */
+}
+
+.box h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.box img {
+  width: 100%;
+  max-height: 200px; /* Adjust the height of the images */
+  object-fit: cover;
+}
+
+.image-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.image-modal img {
+  max-width: 100%;
+  max-height: 80vh;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border: none;
+  color: #ff0000; /* Set the close button color to red */
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  opacity: 0.7; /* Apply fade effect when hovered over */
+}
+
+.confirmation-box {
+  display: none;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+}
+/* Add styles for the confirmation box */
+.confirmation-box {
+  display: none;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+}
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
